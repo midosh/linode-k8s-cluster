@@ -1,0 +1,8 @@
+---
+- name: Rancher k8s nodes
+  hosts: all
+  roles:
+    - mido.common
+    - geerlingguy.firewall
+    - geerlingguy.docker
+    - singleplatform-eng.users

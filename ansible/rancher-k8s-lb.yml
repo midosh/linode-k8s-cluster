@@ -1,0 +1,9 @@
+---
+- name: Rancher k8s nodes
+  hosts: lb
+  roles:
+    - mido.common
+    - geerlingguy.firewall
+    - nginxinc.nginx
+    - jdauphant.nginx
+

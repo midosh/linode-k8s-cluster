@@ -1,0 +1,41 @@
+---
+users:
+  - username: rancherk8s
+    name: Rancher for K8s
+    password: $6$vJFvsMlElCle4X$QG/tiXGzsOQZZw0hjsXXaHQK.mCw0nqUCp8.Bt5H4cs4N72jeHkB2QrNMxtcW7wH8g4AkruYkR1jlcrUhmW/k1
+    groups: ['docker']
+    uid: 1001
+    ssh_key:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD2AUjqj0qBKM09daq5mPTyy1UeGBUUTMVOFq1PWL53Cc8Q/WpaSaGPO8ef+gHI8LQd4/hPnkio8GpDTpZnBrccN05FBIu5j8x8lQ1D4cPs6e4AUB1NmL+qPXLuPY6SD3PB7IRG/E5SLY0FTvJKj5sL8tyDTxXWnulR6ELi+25OLqGa2zeu/hNjRGcqmKxhcojD/YdZWdBtD9p6BS0gSMfwgsCGk9KsMA0ljqenLN317I8puMVcQ7OPCZ6CWHdUgbsdhaEeHy1wLvQQyop56k587dnv6UYzwPZh5fXkRIrD56SMCRT5ZuS0GDTX4cZEKjlRZjQQNK5/+DJTdqbTH9dxL9IK27NMgpuHzdky/LTbxUpcf5i2FhquHgDBjpl16jaI/WzjgRXnrg0AwaPzwVavx7w8YKwy0kqkB74O6ymxG+5/pEFd9KCbRQktH0YXE27zK09R3g7UDAMURBkrB+6gpvC1NPt08WMg3ygDgYanDXjuVGMH188CdmD6S8VAOzk= mido@Mido-PC"
+
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "179"
+  - "8472"
+  - "4789"
+  - "8443"
+  - "9100"
+  - "9443"
+  - "9796"
+  - "6783"
+  - "80"
+  - "443"
+  - "2376"
+  - "2379"
+  - "2380"
+  - "6443"
+  - "9099"
+  - "10250"
+  - "10254"
+
+firewall_allowed_udp_ports:
+  - "8472"
+  - "6783"
+  - "6784"
+
+firewall_additional_rules: 
+- "iptables -A INPUT -p tcp --match multiport --dports 30000:32767 -j ACCEPT"
+- "iptables -A INPUT -p udp --match multiport --dports 30000:32767 -j ACCEPT"
+
+

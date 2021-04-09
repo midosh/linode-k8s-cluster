@@ -1,0 +1,3 @@
+---
+- import_playbook: rancher-k8s-nodes.yml
+- import_playbook: rancher-k8s-lb.yml
